@@ -43,9 +43,9 @@ main { max-width: 1200px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 48px); }
 .hero {
   min-height: 64vh;
   display: grid;
-  grid-template-columns: minmax(0, 1.12fr) minmax(300px, 0.58fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(28px, 5vw, 68px);
-  align-items: flex-end;
+  align-items: end;
   padding: clamp(76px, 10vw, 136px) 0 clamp(52px, 7vw, 86px);
   position: relative;
 }
@@ -285,8 +285,7 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; }
 .callout p { color: #dce7e2; max-width: 900px; }
 .callout .text-link { color: #ffb36c; }
 .praise-section {
-  border-top: 0;
-  padding-top: clamp(36px, 6vw, 72px);
+  padding-top: clamp(62px, 8vw, 96px);
 }
 .praise-layout {
   display: grid;
@@ -318,7 +317,7 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; }
 }
 .quote-card {
   margin: 0;
-  min-height: 180px;
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -328,7 +327,34 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; }
   background: var(--panel);
   box-shadow: var(--shadow);
 }
+.testimonial-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+}
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(11, 107, 85, 0.10), transparent 42%);
+  pointer-events: none;
+}
+.testimonial-avatar {
+  position: relative;
+  width: 92px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 1px solid rgba(7, 63, 51, 0.14);
+  box-shadow: 0 14px 34px rgba(16, 26, 23, 0.16);
+  margin-bottom: 18px;
+  animation: floatAvatar 7s ease-in-out infinite;
+}
+.testimonial-card:nth-child(2) .testimonial-avatar { animation-delay: -1.3s; }
+.testimonial-card:nth-child(3) .testimonial-avatar { animation-delay: -2.1s; }
+.testimonial-card:nth-child(4) .testimonial-avatar { animation-delay: -3.2s; }
 .quote-card blockquote {
+  position: relative;
   margin: 0;
   color: var(--ink);
   font-size: 18px;
@@ -336,6 +362,7 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; }
   font-weight: 720;
 }
 .quote-card figcaption {
+  position: relative;
   margin-top: 16px;
   color: var(--accent-dark);
   font-size: 13px;
@@ -461,6 +488,7 @@ h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .avatar-orb { animation: none; }
+  .testimonial-avatar { animation: none; }
   .reveal {
     opacity: 1;
     transform: none;
