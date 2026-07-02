@@ -4,10 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Improving Fulfilment Workflow Performance | Eric Ofei-Kwapong</title>
-  <meta name="description" content="Eric Ofei-Kwapong portfolio for product, product operations, logistics technology, healthtech, internal systems, and platform roles.">
-  <link rel="stylesheet" href="../assets/styles.css?v=20260706">
+  <meta name="description" content="How Eric Ofei-Kwapong improved fulfilment workflow performance in healthcare logistics through product discovery, slotting workflow design, rollout, and adoption.">
+  <link rel="canonical" href="https://spiffyrtl.github.io/eric-ofei-kwapong-portfolio/case_studies/slotting_tool.html">
+  <meta property="og:title" content="Improving Fulfilment Workflow Performance | Eric Ofei-Kwapong">
+  <meta property="og:description" content="A public-safe product operations case study covering discovery, workflow mapping, slotting, rollout, and measurable delivery improvement.">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="../assets/styles.css?v=20260707">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header">
     <a class="brand" href="../index.html">Eric Ofei-Kwapong</a>
     <nav aria-label="Primary navigation">
@@ -17,36 +23,44 @@
       <a href="../index.html#contact">Contact</a>
     </nav>
   </header>
-  <main>
+  <main id="main-content">
 
     <section class="case-hero">
       <a class="back-link" href="../index.html#case-studies">Back to case studies</a>
       <p class="eyebrow">Product operations, internal platforms, fulfilment systems, rollout</p>
       <h1>Improving Fulfilment Workflow Performance</h1>
-      <p>Large-order delivery slotting depended on manual queue checks, creating delays, expectation mismatches, and inconsistent delivery confidence for healthcare operations.</p>
+      <p>Order intake, warehouse priority, delivery capacity, and health-facility SLA expectations were connected by too many manual checks. The product opportunity was to turn that operating reality into a clearer slotting workflow.</p>
     </section>
 
     <section class="case-layout">
       <article class="case-body">
         <h2>Context</h2>
-        <p>At Zipline, healthcare logistics teams needed reliable ways to coordinate delivery promises across order operations, warehouse work, and contact-centre communication.</p>
+        <p>At Zipline, healthcare logistics teams needed reliable ways to coordinate delivery promises across order operations, warehouse work, and contact-centre communication. Orders came through contact-centre agents via Freshcaller and WhatsApp, with WhatsApp accounting for about 60% of orders.</p>
 
         <h2>Problem</h2>
-        <p>Large-order delivery slotting depended on manual queue checks, creating delays, expectation mismatches, and inconsistent delivery confidence for healthcare operations.</p>
+        <p>Operators packed based on priority: Emergency, Replenishment, Scheduled, and Custom Window, then by order time. When order volume exceeded scheduling and delivery capacity, teams relied on Excel sheets and flight-controller estimates to understand what could realistically be delivered.</p>
+        <p>The product problem was not just a queue. It was too many friction points and too much mental math: operators had to check manual trackers, estimate package load, ask flight controllers for best guesses, and judge whether full orders could still meet communicated health-facility SLAs.</p>
 
         <h2>What I did</h2>
         <ul><li>Visited 8 of 13 distribution centres across Ghana, Rwanda, Kenya, and Nigeria to observe the workflow directly.</li>
 <li>Worked with warehouse operators and contact-centre agents to understand where manual slotting broke down.</li>
-<li>Mapped the workflow, translated pain points into requirements, and aligned operational stakeholders with engineering trade-offs.</li>
-<li>Supported staged rollout, training, adoption tracking, and post-launch feedback loops.</li></ul>
+<li>Mapped the workflow, built a prototype, and translated pain points into Jira epics with clear descriptions and acceptance criteria.</li>
+<li>Worked across discovery, workflow mapping, product description, testing, training, staged rollout, and feedback loops.</li>
+<li>Helped operators move from manual checks to trusting a suggested packing and delivery-slot sequence.</li></ul>
 
         <h2>Product decisions</h2>
         <ul><li>Solve the repeatable workflow bottleneck rather than add more manual coordination.</li>
 <li>Prioritise reliability and expectation-setting over a larger first release.</li>
+<li>Automatically arrange orders into delivery and flight slots based on queue position, priority, order time, and capacity signals.</li>
+<li>Show operators what to pack next and whether full orders could meet communicated health-facility SLAs.</li>
+<li>Eliminate the need to ask flight controllers for best guesses during normal slotting decisions.</li>
 <li>Release in stages so lower-volume sites could validate the operating model before broader rollout.</li></ul>
 
+        <h2>Rollout friction</h2>
+        <p>The main adoption challenge was trust. Operators were used to relying on their own judgment, Excel checks, and flight-controller estimates. Adoption worked because the tool made the work easier and operators had been heavily involved in discovery and testing, so the final workflow was not a surprise.</p>
+
         <h2>Result</h2>
-        <p>Improved on-time delivery from 77% to 97%, saved 3-4 minutes per large order, and reached 100% adoption among target users within four weeks.</p>
+        <p>Improved weekly on-time delivery against health-facility SLAs from 77% to 97%, saved 3-4 minutes per large order by removing Excel checks, flight-controller estimates, and manual SLA calculations, and reached 100% adoption among target users within four weeks.</p>
 
         <h2>What this proves</h2>
         <ul><li>I can turn frontline operational complexity into a practical product workflow.</li>
@@ -56,7 +70,7 @@
 
       <aside class="case-aside">
         <h2>Proof points</h2>
-        <p>Discovery across 8 of 13 distribution centres; on-time delivery 77% to 97%; saved 3-4 minutes per large order; 100% adoption in four weeks.</p>
+        <p>Discovery across 8 of 13 distribution centres; WhatsApp represented about 60% of orders; weekly on-time delivery improved from 77% to 97%; saved 3-4 minutes per large order; 100% adoption in four weeks.</p>
         <h2>Roles this supports</h2>
         <ul><li>Product Operations Manager</li>
 <li>Product Manager</li>
@@ -70,12 +84,28 @@
     </section>
 
   </main>
+  <section class="case-contact" aria-label="Contact Eric">
+    <p>Interested in this kind of product operations and internal systems work?</p>
+    <a class="contact-link" href="https://www.linkedin.com/in/eric-ofei-kwapong-834758124" target="_blank" rel="noopener noreferrer">
+      <svg class="contact-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 10v8M8 7.2v.1M12 18v-4.4c0-2.2 1.3-3.6 3.2-3.6 1.8 0 2.8 1.2 2.8 3.5V18M12 10.4V18"/></svg>
+      <span>Connect on LinkedIn</span>
+    </a>
+    <a class="contact-link" href="mailto:eokwaku@icloud.com">
+      <svg class="contact-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v10H4z"/><path d="m4 8 8 5 8-5"/></svg>
+      <span>Email Eric</span>
+    </a>
+    <a class="contact-link" href="../assets/Eric_Ofei_Kwapong_CV_Master.pdf">
+      <svg class="contact-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 20h14"/></svg>
+      <span>Download CV</span>
+    </a>
+  </section>
   <footer class="site-footer">
     <p>Built to help recruiters quickly understand my product, operations, logistics technology, and platform systems experience.</p>
     <p class="footer-links">
       <span>Rotterdam, Netherlands</span>
-      <a href="mailto:eokwaku@icloud.com">Email Eric</a>
-      <a href="https://www.linkedin.com/in/eric-ofei-kwapong-834758124" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      <a class="footer-action" href="mailto:eokwaku@icloud.com">Email Eric</a>
+      <a class="footer-action" href="../assets/Eric_Ofei_Kwapong_CV_Master.pdf">Download CV</a>
+      <a class="footer-action" href="https://www.linkedin.com/in/eric-ofei-kwapong-834758124" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
     </p>
   </footer>
 </body>
