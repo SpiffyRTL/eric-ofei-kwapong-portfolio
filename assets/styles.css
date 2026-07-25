@@ -498,6 +498,143 @@ h3 {
   color: var(--green-dark);
   font-weight: 820;
 }
+.playbook-hero {
+  max-width: 1040px;
+  padding: clamp(58px, 9vw, 118px) 0 clamp(42px, 6vw, 70px);
+  border-bottom: 1px solid var(--line);
+}
+.playbook-hero h1 {
+  margin: 0;
+  max-width: 980px;
+  font-size: clamp(54px, 9vw, 116px);
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+.lead-copy {
+  max-width: 880px;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(21px, 2.2vw, 30px);
+  line-height: 1.3;
+}
+.playbook-preview {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.48fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 58px);
+  align-items: start;
+}
+.preview-principles,
+.principle-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+.principle-card {
+  min-height: 210px;
+  padding: 24px;
+  background: var(--panel);
+}
+.principle-card h3 {
+  margin-top: 0;
+  color: var(--green-dark);
+}
+.principle-card p {
+  margin: 0;
+  color: var(--muted);
+}
+.playbook-button {
+  align-self: end;
+  justify-self: start;
+}
+.flow-strip,
+.loop-diagram {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.flow-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.loop-diagram {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.flow-strip li,
+.loop-diagram li {
+  position: relative;
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--green-dark);
+  font-size: 14px;
+  font-weight: 850;
+  text-align: center;
+}
+.flow-strip li:not(:last-child)::after,
+.loop-diagram li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  color: var(--warm);
+  font-weight: 900;
+}
+.evidence-section {
+  display: grid;
+  gap: 22px;
+}
+.evidence-block {
+  padding: clamp(24px, 4vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+}
+.evidence-block h3 {
+  margin-top: 0;
+  font-size: clamp(25px, 3vw, 36px);
+}
+.evidence-block p,
+.evidence-block li {
+  color: var(--muted);
+}
+.evidence-block ul {
+  margin: 18px 0;
+  padding-left: 20px;
+}
+.evidence-block li {
+  margin-bottom: 9px;
+}
+.playbook-metrics {
+  border-top: 1px solid var(--line);
+}
+.closing-statement {
+  display: grid;
+  gap: 22px;
+}
+.closing-statement blockquote {
+  max-width: 920px;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(30px, 5vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+.closing-statement p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 19px;
+}
 .reveal {
   opacity: 0;
   transform: translateY(16px);
@@ -529,6 +666,11 @@ h3 {
   .hero-grid,
   .proof-strip,
   .value-grid,
+  .playbook-preview,
+  .preview-principles,
+  .principle-card-grid,
+  .flow-strip,
+  .loop-diagram,
   .split-section,
   .quote-band,
   .career-os-strip,
@@ -548,6 +690,14 @@ h3 {
   .case-row {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+  .flow-strip li:not(:last-child)::after,
+  .loop-diagram li:not(:last-child)::after {
+    right: auto;
+    top: auto;
+    bottom: -19px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
   }
   .case-action { white-space: normal; }
   .button,

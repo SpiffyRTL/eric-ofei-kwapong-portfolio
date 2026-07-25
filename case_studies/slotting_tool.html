@@ -10,7 +10,7 @@
   <meta property="og:description" content="A public-safe product operations case study covering discovery, workflow mapping, slotting, rollout, and measurable delivery improvement.">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary">
-  <link rel="stylesheet" href="../assets/styles.css?v=20260708">
+  <link rel="stylesheet" href="../assets/styles.css?v=20260726">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -19,6 +19,7 @@
     <nav aria-label="Primary navigation">
       <a href="../index.html#what-i-do">Work</a>
       <a href="../index.html#case-studies">Case Studies</a>
+      <a href="../product_playbook.html">Product Playbook</a>
       <a href="../index.html#career-os">Career OS</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
@@ -29,7 +30,7 @@
       <a class="back-link" href="../index.html#case-studies">Back to case studies</a>
       <p class="eyebrow">Product operations, internal platforms, fulfilment systems, rollout</p>
       <h1>Improving Fulfilment Workflow Performance</h1>
-      <p>Order intake, warehouse priority, delivery capacity, and health-facility SLA expectations were connected by too many manual checks. The product opportunity was to turn that operating reality into a clearer slotting workflow.</p>
+        <p>Order intake, warehouse priority, delivery capacity, airspace constraints, and health-facility SLA expectations were connected by too many manual checks. The product opportunity was to turn that operating reality into a clearer decision-support workflow.</p>
     </section>
 
     <section class="case-layout">
@@ -40,21 +41,29 @@
         <h2>Problem</h2>
         <p>Operators packed based on priority: Emergency, Replenishment, Scheduled, and Custom Window, then by order time. When order volume exceeded scheduling and delivery capacity, teams relied on Excel sheets and flight-controller estimates to understand what could realistically be delivered.</p>
         <p>The product problem was not just a queue. It was too many friction points and too much mental math: operators had to check manual trackers, estimate package load, ask flight controllers for best guesses, and judge whether full orders could still meet communicated health-facility SLAs.</p>
+        <p>The workflow also depended on operational capacity signals: order priority, order time, package metadata, facility ETA, available drone bodies, batteries and wings, and the maximum number of drones permitted in flight simultaneously.</p>
 
         <h2>What I did</h2>
         <ul><li>Visited 8 of 13 distribution centres across Ghana, Rwanda, Kenya, and Nigeria to observe the workflow directly.</li>
 <li>Worked with warehouse operators and contact-centre agents to understand where manual slotting broke down.</li>
 <li>Mapped the workflow, built a prototype, and translated pain points into Jira epics with clear descriptions and acceptance criteria.</li>
 <li>Worked across discovery, workflow mapping, product description, testing, training, staged rollout, and feedback loops.</li>
-<li>Helped operators move from manual checks to trusting a suggested packing and delivery-slot sequence.</li></ul>
+<li>Helped operators move from manual checks to trusting a suggested packing and delivery-slot sequence.</li>
+<li>Worked with users to define structured override reasons so overrides became usable product feedback rather than invisible exceptions.</li></ul>
 
         <h2>Product decisions</h2>
         <ul><li>Solve the repeatable workflow bottleneck rather than add more manual coordination.</li>
 <li>Prioritise reliability and expectation-setting over a larger first release.</li>
-<li>Automatically arrange orders into delivery and flight slots based on queue position, priority, order time, and capacity signals.</li>
+<li>Automatically arrange orders into delivery and flight slots based on queue position, priority, order time, package metadata, facility ETA, available drone parts, and airspace concurrency constraints.</li>
+<li>Allow emergency orders to move ahead of the queue when the operating reality changed.</li>
 <li>Show operators what to pack next and whether full orders could meet communicated health-facility SLAs.</li>
 <li>Eliminate the need to ask flight controllers for best guesses during normal slotting decisions.</li>
+<li>Preserve operator control through override capability rather than forcing blind automation.</li>
 <li>Release in stages so lower-volume sites could validate the operating model before broader rollout.</li></ul>
+
+        <h2>Human override design</h2>
+        <p>My original concept was full automation. Discovery showed that decision support with human control was the better product. Operators needed recommendations they could trust, but they also needed to override the system when real-world conditions changed.</p>
+        <p>Override reasons included incoming emergency order, changed order priority, after-hours delivery, and reduced capacity caused by a faulty LRU. The reasons were selected from a predefined list developed with users, which helped turn human judgment into structured feedback for future product decisions.</p>
 
         <h2>Rollout friction</h2>
         <p>The main adoption challenge was trust. Operators were used to relying on their own judgment, Excel checks, and flight-controller estimates. Adoption worked because the tool made the work easier and operators had been heavily involved in discovery and testing, so the final workflow was not a surprise.</p>
@@ -65,12 +74,13 @@
         <h2>What this proves</h2>
         <ul><li>I can turn frontline operational complexity into a practical product workflow.</li>
 <li>I combine discovery, prioritisation, rollout, and adoption instead of stopping at requirements.</li>
-<li>I understand logistics systems from both operator and platform perspectives.</li></ul>
+<li>I understand logistics systems from both operator and platform perspectives.</li>
+<li>I know when automation should support user judgment instead of replacing it.</li></ul>
       </article>
 
       <aside class="case-aside">
         <h2>Proof points</h2>
-        <p>Discovery across 8 of 13 distribution centres; WhatsApp represented about 60% of orders; weekly on-time delivery improved from 77% to 97%; saved 3-4 minutes per large order; 100% adoption in four weeks.</p>
+        <p>Discovery across 8 of 13 distribution centres; WhatsApp represented about 60% of orders; slotting logic considered order priority, order time, package metadata, facility ETA, drone body/battery/wing availability, and airspace concurrency constraints; weekly on-time delivery improved from 77% to 97%; saved 3-4 minutes per large order; 100% adoption in four weeks.</p>
         <h2>Roles this supports</h2>
         <ul><li>Product Operations Manager</li>
 <li>Product Manager</li>
