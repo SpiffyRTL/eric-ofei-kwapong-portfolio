@@ -11,6 +11,17 @@
   --shadow: 0 18px 44px rgba(17, 23, 20, 0.08);
 }
 
+/* Keep the new editorial case studies unframed and readable on narrow screens. */
+.new-case .case-body,
+.new-case .case-aside { border: 0; border-radius: 0; background: transparent; padding: 0; min-width: 0; }
+.new-case .case-aside { border-top: 1px solid var(--line); padding-top: 24px; }
+.new-case .case-hero h1 { font-size: 56px; letter-spacing: 0; overflow-wrap: break-word; }
+.new-case .case-body h2,
+.new-case .case-aside h2 { letter-spacing: 0; }
+@media (max-width: 700px) {
+  .new-case .case-hero h1 { font-size: 36px; }
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
