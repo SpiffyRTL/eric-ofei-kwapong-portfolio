@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aquablu Inventory and Replenishment | Eric Ofei-Kwapong</title>
+  <meta name="description" content="A working Aquablu business-case prototype: explainable replenishment, manager approval and stock movements grounded in confirmed receipts.">
+  <link rel="canonical" href="https://spiffyrtl.github.io/eric-ofei-kwapong-portfolio/case_studies/aquablu_inventory.html">
+  <meta property="og:title" content="Aquablu Inventory and Replenishment | Eric Ofei-Kwapong">
+  <meta property="og:description" content="From a business-case data pack to a working inventory workflow. Explore the product decisions, public demo and limits of the prototype.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://spiffyrtl.github.io/eric-ofei-kwapong-portfolio/case_studies/aquablu_inventory.html">
+  <meta property="og:image" content="https://spiffyrtl.github.io/eric-ofei-kwapong-portfolio/assets/aquablu-prototype.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aquablu Inventory and Replenishment | Eric Ofei-Kwapong">
+  <meta name="twitter:description" content="A working business-case prototype for inventory, replenishment approval and receipt handling.">
+  <link rel="stylesheet" href="../assets/styles.css?v=20261025">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Eric Ofei-Kwapong</a>
+    <nav aria-label="Primary navigation">
+      <a href="../index.html#what-i-do">Work</a>
+      <a href="../index.html#case-studies">Case Studies</a>
+      <a href="../product_playbook.html">Product Playbook</a>
+      <a href="../index.html#career-os">Hired OS</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+  <main id="main-content" class="new-case">
+    <section class="case-hero">
+      <a class="back-link" href="../index.html#additional-projects">Back to case studies</a>
+      <p class="eyebrow">Business case / Working prototype / AI-assisted build</p>
+      <h1>Aquablu Inventory and Replenishment</h1>
+      <p>Helping a site manager decide what to reorder without confusing an order, a delivery and stock they can actually use.</p>
+      <a class="button" href="aquablu_demo.html">Try the working demo</a>
+    </section>
+    <figure class="prototype-figure">
+      <a href="aquablu_demo.html" aria-label="Open the Aquablu inventory prototype">
+        <img src="../assets/aquablu-prototype.png" width="1440" height="1561" alt="The public inventory prototype showing a stock-count task, separate flavour balances and delivery receipt tracking.">
+      </a>
+      <figcaption>Public version of the business-case prototype, using illustrative data. Customer records from the supplied data pack are not published.</figcaption>
+    </figure>
+    <div class="case-layout">
+      <article class="case-body">
+        <h2>The brief and the problem I chose</h2>
+        <p>Aquablu's Digital Product Builder business case asked for a working prototype from a supplied data pack and a walkthrough of the decisions and failure modes. I chose flavour inventory and replenishment for a connected dispenser site.</p>
+        <p>The practical question was what the manager should do next. Consumption, catalogue information and order status can help, but none of them alone proves how many spare boxes are in the cupboard.</p>
+        <h2>Start with a stock state people can trust</h2>
+        <p>I required an opening count rather than treating a historical count as current inventory. Receipt adds boxes to cupboard stock. A confirmed fresh installation removes a box. Dispatch and delivery status alone do not change the balance.</p>
+        <ol class="case-flow" aria-label="Prototype workflow">
+          <li>Confirm stock</li><li>Record receipt</li><li>Confirm replacement</li><li>Review replenishment</li><li>Approve and track</li>
+        </ol>
+        <h2>A recommendation the manager can inspect</h2>
+        <p>The prototype estimates daily use from recorded consumption and observed days, then combines that estimate with nominal box yield and catalogue lead time. A reorder threshold includes a safety buffer; a separate target determines the suggested quantity.</p>
+        <p>The manager can edit, approve or reject the suggestion. The calculation is deterministic and visible. I used AI to help build the prototype; an LLM does not make the inventory recommendation.</p>
+        <h2>Build the exceptions into the journey</h2>
+        <ul>
+          <li><strong>A delivery is short.</strong> Confirm quantities separately for each flavour. Keep the order incomplete until every line is received; record the discrepancy instead of adding missing boxes.</li>
+          <li><strong>A flavour is unavailable.</strong> Keep the need visible and exclude that flavour from the new order. The demo does not invent a substitute or claim the shortage is resolved.</li>
+          <li><strong>There is no consumption history.</strong> Track receipts for that flavour, but show that demand is unknown rather than generating a recommendation.</li>
+          <li><strong>The manager rejects the suggestion.</strong> Retain the stock risk. A rejected recommendation does not mean that inventory improved.</li>
+          <li><strong>Order creation fails or is retried.</strong> The mock integration reports failure without recording success and guards against duplicate creation within the demo cycle.</li>
+        </ul>
+        <h2>What I built</h2>
+        <p>I used Codex to turn the product logic into a browser prototype with a guided next action, cupboard balances, order states and a short activity history. It supports opening counts, per-flavour receipts, replacement events and manager approval through a simulated webshop request.</p>
+        <p>The output was runnable software for the business-case discussion. It was not a slide presentation, a live Aquablu integration or a production deployment.</p>
+        <h2>Where the prototype stops</h2>
+        <p>Opening stock and new events are simulated. Safety-stock buffers are product assumptions, not validated Aquablu policies. Catalogue availability does not reserve warehouse stock, and nominal yields and average consumption do not guarantee future demand.</p>
+        <p>The guided replenishment journey covers one flavour and one order cycle. Multi-flavour receipt tracking is broader, but continuous planning, concurrent approvals, backorder reconciliation and combining orders across flavours remain production questions. Browser storage is local to the current device.</p>
+        <h2>What I would validate next</h2>
+        <p>I would observe who counts stock and confirms receipts at a site, then test whether the proposed tasks fit that person's day. With Aquablu, I would validate purchasing authority, demand quality, lead-time variation and the cost of combining or splitting orders before automating more decisions.</p>
+        <p>Proposed success measures include stock-count discrepancies, stockout incidents, time spent replenishing and recommendation acceptance or override reasons. No reduction in cost, stockouts or manual work was measured in this business case.</p>
+        <h2>What this case changed</h2>
+        <p>A useful replenishment product needs a defensible stock balance before it needs a more sophisticated forecast. The prototype made that trade-off concrete enough to discuss and challenge.</p>
+      </article>
+      <aside class="case-aside" aria-label="Project context">
+        <h2>My contribution</h2>
+        <p>Problem selection, workflow and state design, recommendation rules, exception handling and an AI-assisted working prototype.</p>
+        <h2>Evidence boundary</h2>
+        <p>Business-case work, not employment at Aquablu. Operational events and webshop responses are simulated. No production outcomes are claimed.</p>
+        <h2>Explore the prototype</h2>
+        <p><a class="button" href="aquablu_demo.html">Open public demo</a></p>
+        <p>The public demo uses illustrative records and keeps the core workflow of the interview prototype. It does not connect to Aquablu or send orders.</p>
+        <h2>Product strengths</h2>
+        <ul><li>Physical and digital handoffs</li><li>Explainable automation</li><li>Human approval</li><li>Inventory and exception logic</li><li>AI-assisted prototyping</li></ul>
+        <p><a href="wellis_patient_platform.html">Read the Wellis case</a></p>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <p>Built to help recruiters quickly understand my product, operations, logistics technology, and platform systems experience.</p>
+    <p class="footer-links"><span>Rotterdam, Netherlands</span><a class="footer-action" href="mailto:eokwaku@icloud.com">Email Eric</a><a class="footer-action" href="../assets/Eric_Ofei_Kwapong_CV_Master.pdf">Download CV</a><a class="footer-action" href="https://www.linkedin.com/in/eric-ofei-kwapong-834758124" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></p>
+  </footer>
+</body>
+</html>
